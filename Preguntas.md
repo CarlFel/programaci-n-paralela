@@ -4,19 +4,19 @@
 
 ## Codigo paralelizado
 
-´´´ 
+```c
 #pragma omp parallel for
-    for (k = 1; k <= N; k++) {
-        double thread_start = omp_get_wtime(); // Tiempo de inicio del thread
-        
-        zeta_results[k-1] = Riemann_Zeta(s, k);
-        errors[k-1] = fabs(zeta_results[k-1] - exact_value);
-        
-        double thread_end = omp_get_wtime(); // Tiempo de fin del thread
-        int thread_id = omp_get_thread_num();
-        thread_times[thread_id] += (thread_end - thread_start) * 1000.0; // tiempo en ms
-    }
-´´´
+for (k = 1; k <= N; k++) {
+    double thread_start = omp_get_wtime(); // Tiempo de inicio del thread
+    
+    zeta_results[k-1] = Riemann_Zeta(s, k);
+    errors[k-1] = fabs(zeta_results[k-1] - exact_value);
+    
+    double thread_end = omp_get_wtime(); // Tiempo de fin del thread
+    int thread_id = omp_get_thread_num();
+    thread_times[thread_id] += (thread_end - thread_start) * 1000.0; // tiempo en ms
+}
+```
 
 
 ## 1. Variables Compartidas
@@ -65,7 +65,7 @@ Así, de esta forma seguimos con la siguiente implementación (´2_zeta.c´), aj
 
 Implementación del chunk en el codigo ´2_zeta.c´:
 
-´´´
+```c
     #pragma omp parallel
     {
         int thread_id = omp_get_thread_num();
@@ -80,7 +80,7 @@ Implementación del chunk en el codigo ´2_zeta.c´:
         double thread_end = omp_get_wtime();
         thread_times[thread_id] = (thread_end - thread_start) * 1000.0; // ms
     } 
-´´´
+```
 Tomando el valor de chunk como: $$ chunk=\frac{1}{\alpha}\frac{N}{p}$$
 
 donde $N$ corresponde al valor de $k=100$, y $p=7$ que son los threads y $\alpha$ es un parámetro empírico, se ajusta su valor observando las pruebas de rendimiento. Para nuestro caso, será $\alpha=1$
