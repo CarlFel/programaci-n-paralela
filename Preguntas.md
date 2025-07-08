@@ -4,7 +4,8 @@
 
 ## Codigo paralelizado
 
-´´´ #pragma omp parallel for
+´´´ 
+#pragma omp parallel for
     for (k = 1; k <= N; k++) {
         double thread_start = omp_get_wtime(); // Tiempo de inicio del thread
         
@@ -14,7 +15,8 @@
         double thread_end = omp_get_wtime(); // Tiempo de fin del thread
         int thread_id = omp_get_thread_num();
         thread_times[thread_id] += (thread_end - thread_start) * 1000.0; // tiempo en ms
-    }´´´
+    }
+´´´
 
 
 ## 1. Variables Compartidas
