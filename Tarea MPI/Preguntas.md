@@ -33,11 +33,11 @@ Sea $h$ la distancia entre estos puntos espaciales.
 
 $$x_i = ih, \ \ \ y_j = jh, \ \ \ \phi(i,j)=\phi(x_i,y_j)$$
 
-$$\Delta = \sum^{d-1}_{k=0} \partial^2 _{x^2_k} = \partial^{2}_{x^2_0} + ... + \partial^2 _{x^2_{d-1}}$$
+$$\Delta = \sum^{d-1}_{k=0} \partial ^2 _{x^{2}_{k}} = \partial ^{2}_{x^{2}_{0}} + ... + \partial ^{2} _{x^{2}_{d-1}}$$
 
 El último correspondiendo al operador Laplaciano. Entonces, escribiendo la ecuación de Poisson:
 
-$$\partial^2 _{x^2} \phi(i,j) + \partial^2_{y^2} \phi(i,j) = -\frac{\rho(i,j)}{\epsilon_0}$$
+$$\partial ^2 _{x^{2}} \phi (i,j) + \partial ^2_{y^{2}} \phi(i,j) = -\frac{ \rho(i,j)}{\epsilon _0}$$
 
 Aproximando la segunda derivada respecto a $x$ e $y$, obtenemos:
 
