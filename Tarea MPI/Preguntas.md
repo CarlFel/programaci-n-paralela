@@ -31,7 +31,9 @@ Primero consideramos usar el Método de Diferencias Finitas, una malla de puntos
 
 Sea $h$ la distancia entre estos puntos espaciales. 
 
-$$x_i = ih \quad y_j = jh \quad \phi(i,j)=\phi(x_i,y_j) \quad \Delta = \sum^{d-1}_{k=0} \partial^2 _{x^2_k} = \partial^{2}_{x^2_0} + ... + \partial^2 _{x^2_{d-1}}$$
+$$x_i = ih, \ \ \ y_j = jh, \ \ \ \phi(i,j)=\phi(x_i,y_j)$$
+
+$$\Delta = \sum^{d-1}_{k=0} \partial^2 _{x^2_k} = \partial^{2}_{x^2_0} + ... + \partial^2 _{x^2_{d-1}}$$
 
 El último correspondiendo al operador Laplaciano. Entonces, escribiendo la ecuación de Poisson:
 
