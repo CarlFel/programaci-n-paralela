@@ -23,7 +23,9 @@ Cuando tenemos el número de datos variado bajo escalabilidad débil, utilizamos
 
 $$S(p)=p + f(1-p)$$
 
-por lo tanto: $$ 50 = 150 + f(1-150) \Rightarrow \ -100 = -149f \ \Rightarrow \ f= \frac{100}{149}= 0 ,671$$
+por lo tanto: $$ 50 = 150 + f(1-150) \Rightarrow  -100 = -149f $$
+
+$$\Rightarrow  f= \frac{100}{149}= 0 ,671$$
 
 
 ### 4- paralelizable?
